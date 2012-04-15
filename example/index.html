@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- This example uses RequireJS: http://requirejs.org/ -->
+		<script src="require.js"></script>
+		<script>
+
+// Configure the module locations.
+require.config({
+	paths: {
+		'base64': '/lib/base64'
+	}
+});
+
+// Include the base64 module.
+require(['base64'], function(base64) {
+
+	var plaintext = 'Hello world!';
+	var encoded = base64.encode(plaintext);
+	var decoded = base64.decode(encoded);
+
+	var result = 'Plaintext: "' + plaintext + '"<br>';
+	result += 'Encoded: "' + encoded + '"<br>';
+	result += 'Decoded: "' + decoded + '"<br>';
+
+	var output = document.getElementById('output');
+	output.insertAdjacentHTML('beforebegin', result);
+
+});
+
+		</script>
+	</head>
+	<body>
+		<pre id="output"></pre>
+	</body>
+</html>

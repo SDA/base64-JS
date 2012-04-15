@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Base64</title>
+	</head>
+<body>
+	<pre id="output"></pre>
+
+<script src="../lib/base64.js"></script>
+<script>
+
+var plaintext = 'Hello world!';
+var encoded = base64.encode(plaintext);
+var decoded = base64.decode(encoded);
+
+var result = 'Plaintext: "' + plaintext + '"<br>';
+result += 'Encoded: "' + encoded + '"<br>';
+result += 'Decoded: "' + decoded + '"<br>';
+
+var output = document.getElementById('output');
+output.insertAdjacentHTML('beforebegin', result);
+
+</script>
+
+</body>
+</html>
